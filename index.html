@@ -42,24 +42,24 @@
     <style>
         body {
             font-family: 'Vazirmatn', 'sans-serif';
-            background-color: #f4f3ef;
+            background-color: #0d0e10;
             background-image: 
-                radial-gradient(circle at 20% 20%, rgba(185, 28, 28, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(13, 92, 84, 0.04) 0%, transparent 40%);
+                radial-gradient(circle at 15% 15%, rgba(185, 28, 28, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(13, 92, 84, 0.04) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
-        /* پترن تذهیب باکیفیت و برجسته اسلیمی بر روی بدنه خاکستری سربی */
+        /* پترن تذهیب باکیفیت و برجسته اسلیمی روی بدنه خاکستری سربی */
         .islamic-pattern-bg {
             position: relative;
-            background-color: #151719;
+            background-color: #0c0d0f;
         }
         
         .islamic-pattern-bg::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='0.9' stroke-opacity='0.14'%3E%3Cpath d='M40 0 L45 35 L80 40 L45 45 L40 80 L35 45 L0 40 L35 35 Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3Cpath d='M0 0 L80 80 M80 0 L0 80'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='0.7' stroke-opacity='0.05'%3E%3Cpath d='M40 0 L45 35 L80 40 L45 45 L40 80 L35 45 L0 40 L35 35 Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3Cpath d='M0 0 L80 80 M80 0 L0 80'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: repeat;
             pointer-events: none;
             z-index: 0;
@@ -87,7 +87,7 @@
 <body class="text-gray-100 min-h-screen py-4 px-2 sm:px-4 flex justify-center items-start">
 
 <!-- بدنه اصلی هاب تعاملی -->
-<div id="app-viewport" class="w-full max-w-md islamic-pattern-bg border border-ashura-700/40 rounded-[32px] p-3.5 sm:p-4 shadow-2xl flex flex-col gap-5 overflow-hidden relative min-h-[660px]">
+<div id="app-viewport" class="w-full max-w-md islamic-pattern-bg border border-white/5 rounded-[32px] p-3.5 sm:p-4 shadow-2xl flex flex-col gap-5 overflow-hidden relative min-h-[660px]">
     
     <!-- لایه محتوا جهت اولویت قرارگیری بر روی پترن پس‌زمینه -->
     <div class="content-layer flex flex-col gap-5">
@@ -95,42 +95,41 @@
     <!-- نمای اصلی هاب -->
     <div id="main-hub-view" class="flex flex-col gap-5 transition-view">
 
-        <!-- مقتل روزانه با طراحی اکستندبل و بنر تصویری ارسالی بین‌الحرمین (سکشن اول - شروع مستقیم با بنر) -->
-        <section class="relative bg-ashura-800/90 backdrop-blur-sm border border-ashura-700/50 rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg">
+        <!-- -->
+        <!-- سکشن اول: مقتل روزانه (طراحی شیشه‌ای لوکس و سرد متمایز) -->
+        <section class="relative bg-slate-900/40 backdrop-blur-md border border-slate-700/30 rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg">
             
-            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل -->
-            <div id="story-img-frame" class="w-full h-40 sm:h-44 rounded-xl bg-ashura-950 mb-3.5 border border-ashura-700/60 relative overflow-hidden transition-all duration-300">
+            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل بدون هیچ حاشیه شلوغ -->
+            <div id="story-img-frame" class="w-full h-40 sm:h-44 rounded-xl bg-ashura-950 mb-3.5 border border-white/5 relative overflow-hidden transition-all duration-300">
                 <img id="story-img" src="5.webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
-                <div class="absolute inset-0 bg-gradient-to-t from-ashura-950 via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             </div>
 
             <h3 id="story-title" class="text-[13.5px] font-black text-white mb-1.5 flex items-center gap-1.5"><i class="fa-solid fa-place-of-worship text-ashura-gold"></i>بارگاه ملکوتی گنبد سیدالشهدا</h3>
             <!-- زیرتیتر روایت -->
-            <p id="story-text" class="text-[11.5px] text-slate-300 leading-relaxed mb-2">نگاهی به گنبد طلا کوب و پرچم برافراشته حرم اباعبدالله الحسین (ع)؛ ملجأ عاشقان...</p>
+            <p id="story-text" class="text-[11.5px] text-slate-300 leading-relaxed mb-2.5">نگاهی به گنبد طلا کوب و پرچم برافراشته حرم اباعبدالله الحسین (ع)؛ ملجأ عاشقان...</p>
 
-            <!-- محتوای اکستند شونده مقتل -->
-            <div id="narrative-extension" class="max-h-0 overflow-hidden transition-all duration-500 opacity-0 border-t border-zinc-700/50">
+            <!-- محتوای اکستند شونده مقتل (بدون پلیر صوتی) -->
+            <div id="narrative-extension" class="max-h-0 overflow-hidden transition-all duration-500 opacity-0 border-t border-white/5">
                 <div class="py-2.5 text-slate-300 text-[11px] leading-relaxed" id="narrative-extended-text">
                     کربلا آغوش گشوده است تا خونین‌ترین حماسه عدل بشر را در آغوش کشد. روز اول کاروان اباعبدالله الحسین (ع) به این دشت نزدیک می‌شود؛ جایی که خاکش بوی ایثار و هوایش شمیم وفاداری دارد.
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-2.5 border-t border-slate-700/40">
-                <button onclick="toggleNarrative()" id="narrative-toggle-btn" class="text-[10.5px] font-bold text-ashura-goldlight flex items-center gap-1"><i class="fa-solid fa-book-open"></i><span>متن کامل روایت</span></button>
-                <span class="text-[9.5px] text-slate-500 font-medium">میکروروايت مصور</span>
+            <div class="flex items-center pt-2.5 border-t border-white/5">
+                <button onclick="toggleNarrative()" id="narrative-toggle-btn" class="text-[10.5px] font-bold text-ashura-goldlight flex items-center gap-1 hover:text-ashura-gold transition-colors"><i class="fa-solid fa-book-open"></i><span>ادامه متن</span></button>
             </div>
         </section>
 
-        <!-- بخش خرید اشتراک با تم کرم و دکمه‌های قرمز یکدست بر مبنای تصاویر ارسالی (سکشن دوم) -->
-        <section class="bg-ashura-800/95 border border-ashura-700/60 rounded-2xl p-3.5 sm:p-4 shadow-xl relative">
+        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی گرم و مجزا بدون نشان شلوغ ویژه محرم) -->
+        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی گرم و کاملاً تفکیک‌شده بدون نشان شلوغ محرم) -->
+        <section class="bg-amber-950/25 backdrop-blur-md border border-amber-500/20 rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_0_rgba(217,119,6,0.03)] relative">
             <div class="flex justify-between items-center gap-2 mb-4">
                 <!-- عنوان بخش هم وزن و باابهت همانند بنر مقتل بالا -->
-                <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 flex items-center gap-1.5 min-w-0">
+                <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-amber-100 flex items-center gap-1.5 min-w-0">
                     <span class="text-amber-500 text-xs sm:text-sm shrink-0">👑</span>
                     <span class="truncate">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم</span>
                 </h4>
-                <!-- جلوگیری از شکستگی متن با کلاس‌های قدرتمند whitespace-nowrap و shrink-0 -->
-                <span class="text-[9px] xs:text-[9.5px] text-white bg-ashura-red px-2 py-0.5 rounded border border-red-500/30 font-black animate-pulse whitespace-nowrap shrink-0">ویژه محرم</span>
             </div>
 
             <!-- گرید اشتراک‌های سه‌گانه نوستالژیک باب با تم کرم لوکس بر مبنای تصاویر ارسالی -->
@@ -172,7 +171,7 @@
                     </div>
                 </div>
 
-                <!-- کارت دائمی (بدون تخفیف با قیمت اصلی ۸۸۰ هزار تومان) -->
+                <!-- کارت دائمی (بدون تخفیف و با قیمت اصلی ۸۸۰ هزار تومان) -->
                 <div onclick="openInvoice('life')" class="bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.02] transition-all">
                     <!-- نگهداشت فضاساز نامرئی جهت حفظ تراز افقی کارت ها در غیاب بج تخفیف -->
                     <div class="h-[14px] xs:h-[15px] mb-1.5"></div>
@@ -195,52 +194,54 @@
             </div>
         </section>
 
-        <!-- بخش نذورات به صورت دو کارت شیشه‌ای روشن، تمام‌عرض و بسیار جلب‌توجه‌کننده جهت گرفتن بیشترین کلیک (سکشن سوم) -->
+        <!-- -->
+        <!-- بخش نذورات به صورت دو کارت شیشه‌ای روشن، تمام‌عرض و بسیار متمایز از هم (سکشن سوم) -->
         <section class="flex flex-col gap-3.5">
-            <!-- کارت اول: نذر بهار معرفت (تم سبز فیروزه‌ای درخشان با سایه نئونی، عرض تمام صفحه و جایگاه لوگو) -->
-            <div onclick="showCharityView('bahar')" class="bg-teal-950/20 backdrop-blur-md border border-teal-500/40 hover:border-teal-400/70 rounded-2xl p-3 cursor-pointer shadow-[0_0_12px_rgba(20,184,166,0.12)] hover:shadow-[0_0_18px_rgba(20,184,166,0.2)] hover:scale-[1.02] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                <div class="absolute top-0 inset-x-0 h-[3px] bg-teal-500/30"></div>
+            <!-- کارت اول: نذر بهار معرفت (تم سبز فیروزه‌ای شیشه‌ای متمایز و مینی‌مال) -->
+            <div onclick="showCharityView('bahar')" class="bg-teal-950/25 backdrop-blur-md border border-teal-500/20 hover:border-teal-400/40 rounded-2xl p-3 cursor-pointer shadow-[0_4px_20px_0_rgba(20,184,166,0.03)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
+                <div class="absolute top-0 inset-x-0 h-[2px] bg-teal-500/20"></div>
                 
                 <!-- لوگوی پویش بهار معرفت -->
-                <div class="w-12 h-12 rounded-xl overflow-hidden bg-teal-950/60 flex-shrink-0 flex items-center justify-center shadow-inner">
+                <div class="w-12 h-12 rounded-xl overflow-hidden bg-teal-950/40 flex-shrink-0 flex items-center justify-center">
                     <img src="3.jpg" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1.5">
                 </div>
 
                 <div class="flex-grow">
                     <h4 class="text-[12px] font-black text-teal-300 mb-0.5">نذر بهار معرفت</h4>
-                    <p class="text-[10.5px] text-slate-200 leading-normal">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
+                    <p class="text-[10.5px] text-slate-300 leading-normal">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
                 </div>
             </div>
 
-            <!-- کارت دوم: اطعام گلستان علی (تم سرخ گرم درخشان با سایه نئونی، عرض تمام صفحه و جایگاه لوگو) -->
-            <div onclick="showCharityView('golestan')" class="bg-red-950/20 backdrop-blur-md border border-red-500/40 hover:border-red-400/70 rounded-2xl p-3 cursor-pointer shadow-[0_0_12px_rgba(239,68,68,0.12)] hover:shadow-[0_0_18px_rgba(239,68,68,0.2)] hover:scale-[1.02] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                <div class="absolute top-0 inset-x-0 h-[3px] bg-red-500/30"></div>
+            <!-- کارت دوم: اطعام گلستان علی (تم سرخ گرم شیشه‌ای متمایز و مینی‌مال) -->
+            <div onclick="showCharityView('golestan')" class="bg-red-950/25 backdrop-blur-md border border-red-500/20 hover:border-red-400/40 rounded-2xl p-3 cursor-pointer shadow-[0_4px_20px_0_rgba(185,28,28,0.03)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
+                <div class="absolute top-0 inset-x-0 h-[2px] bg-red-500/20"></div>
                 
                 <!-- لوگوی پویش اطعام گلستان علی -->
-                <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/60 flex-shrink-0 flex items-center justify-center shadow-inner">
+                <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/40 flex-shrink-0 flex items-center justify-center">
                     <img src="4.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1.5">
                 </div>
 
                 <div class="flex-grow">
                     <h4 class="text-[12px] font-black text-red-300 mb-0.5">اطعام گلستان علی</h4>
-                    <p class="text-[10.5px] text-slate-200 leading-normal">توزیع غذای گرم در تاسوعا و عاشورا</p>
+                    <p class="text-[10.5px] text-slate-300 leading-normal">توزیع غذای گرم در تاسوعا و عاشورا</p>
                 </div>
             </div>
         </section>
 
-        <!-- بخش عکس‌های مردمی (سکشن چهارم) -->
-        <section class="bg-ashura-800/90 border border-ashura-700/50 rounded-2xl p-3.5 sm:p-4 shadow-lg">
+        <!-- -->
+        <!-- بخش عکس‌های مردمی (طراحی شیشه‌ای هماهنگ) -->
+        <section class="bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-2xl p-3.5 sm:p-4 shadow-lg">
             <div class="flex justify-between items-center mb-3">
-                <span class="text-[11px] font-black text-slate-200">عکس‌های مردمی «برای حسین جانم...»</span>
+                <span class="text-[11px] font-black text-slate-400">عکس‌های مردمی «برای حسین جانم...»</span>
             </div>
             <div class="flex gap-3 mb-1 overflow-x-auto no-scrollbar py-0.5" id="ugc-gallery">
-                <div class="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-ashura-700 shadow-sm">
+                <div class="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-white/5 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="عکس ارسالی">
                 </div>
-                <div class="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-ashura-700 shadow-sm">
+                <div class="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-white/5 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="عکس ارسالی">
                 </div>
-                <label class="w-16 h-16 rounded-xl bg-ashura-700/40 hover:bg-ashura-700/70 border border-dashed border-ashura-600 flex flex-col items-center justify-center cursor-pointer flex-shrink-0 transition-all">
+                <label class="w-16 h-16 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-dashed border-white/10 flex flex-col items-center justify-center cursor-pointer flex-shrink-0 transition-all">
                     <i class="fa-solid fa-plus text-xs text-ashura-gold"></i>
                     <input type="file" class="hidden" onchange="handleImageUpload(event)">
                 </label>
@@ -250,14 +251,14 @@
 
     <!-- نمای پیش‌فاکتور تعاملی (SPA) -->
     <div id="pre-invoice-view" class="hidden flex-col gap-5 transition-view opacity-0">
-        <header class="flex items-center gap-3 pb-3 border-b border-ashura-800">
-            <button onclick="backToMain()" class="w-7 h-7 rounded-lg bg-ashura-800 flex items-center justify-center text-slate-300">
+        <header class="flex items-center gap-3 pb-3 border-b border-white/5">
+            <button onclick="backToMain()" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-300 transition-colors">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
             <h3 class="text-xs font-black text-white">پیش‌فاکتور خرید اشتراک</h3>
         </header>
-        <div class="bg-ashura-800 p-4 rounded-2xl border border-ashura-700/50">
-            <div class="flex items-center gap-3 bg-zinc-900/60 p-3 rounded-xl border border-white/5">
+        <div class="bg-white/[0.02] backdrop-blur-xl border border-white/[0.08] p-4 rounded-2xl shadow-lg">
+            <div class="flex items-center gap-3 bg-black/40 p-3 rounded-xl border border-white/5">
                 <div class="w-11 h-11 bg-black rounded-lg flex items-center justify-center overflow-hidden relative">
                     <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
                     <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
@@ -278,44 +279,45 @@
                     <span>تخفیف ویژه:</span>
                     <span id="invoice-discount">-۶۸,۰۰۰ تومان</span>
                 </div>
-                <div class="flex justify-between border-t border-white/10 pt-2.5 font-black text-white">
+                <div class="flex justify-between border-t border-white/5 pt-2.5 font-black text-white">
                     <span>قابل پرداخت:</span>
                     <span id="invoice-final-price" class="text-ashura-goldlight">۱۲۵,۰۰۰ تومان</span>
                 </div>
             </div>
         </div>
-        <button onclick="processPayment()" class="w-full bg-ashura-red py-3.5 rounded-xl font-black text-sm text-white shadow-lg active:scale-[0.98]">تایید و پرداخت نهایی</button>
+        <button onclick="processPayment()" class="w-full bg-ashura-red hover:bg-ashura-redhover py-3.5 rounded-xl font-black text-sm text-white shadow-lg active:scale-[0.98] transition-colors">تایید و پرداخت نهایی</button>
     </div>
     
     <!-- نمای خیریه و نذر -->
     <div id="charity-view" class="hidden flex-col gap-5 transition-view opacity-0">
-        <header class="flex items-center gap-3 pb-3 border-b border-ashura-800">
-            <button onclick="backToMain()" class="w-7 h-7 rounded-lg bg-ashura-800 flex items-center justify-center text-slate-300">
+        <header class="flex items-center gap-3 pb-3 border-b border-white/5">
+            <button onclick="backToMain()" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-300 transition-colors">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
             <h3 id="charity-title-header" class="text-xs font-black text-white">پویش نذر</h3>
         </header>
-        <div class="bg-ashura-800 p-4 rounded-2xl border border-ashura-700/50">
+        <div class="bg-white/[0.02] backdrop-blur-xl border border-white/[0.08] p-4 rounded-2xl shadow-lg">
             <p id="charity-description" class="text-[11.5px] text-slate-300 leading-relaxed text-justify mb-4">...</p>
             <div class="grid grid-cols-3 gap-2">
-                <button onclick="showToast('مبلغ ۵۰ هزار انتخاب شد')" class="bg-ashura-700 py-2.5 rounded-lg text-[10.5px] font-black text-white">۵۰ هزار</button>
-                <button onclick="showToast('مبلغ ۱۰۰ هزار انتخاب شد')" class="bg-ashura-700 py-2.5 rounded-lg text-[10.5px] font-black text-white">۱۰۰ هزار</button>
-                <button onclick="showToast('مبلغ ۲۰۰ هزار انتخاب شد')" class="bg-[#004D40] py-2.5 rounded-lg text-[10.5px] font-black text-teal-300">۲۰۰ هزار</button>
+                <button onclick="showToast('مبلغ ۵۰ هزار انتخاب شد')" class="bg-white/5 hover:bg-white/10 py-2.5 rounded-lg text-[10.5px] font-black text-white transition-colors">۵۰ هزار</button>
+                <button onclick="showToast('مبلغ ۱۰۰ هزار انتخاب شد')" class="bg-white/5 hover:bg-white/10 py-2.5 rounded-lg text-[10.5px] font-black text-white transition-colors">۱۰۰ هزار</button>
+                <button onclick="showToast('مبلغ ۲۰۰ هزار انتخاب شد')" class="bg-[#004D40]/60 hover:bg-[#004D40] py-2.5 rounded-lg text-[10.5px] font-black text-teal-300 transition-colors">۲۰۰ هزار</button>
             </div>
         </div>
-        <button onclick="processPayment()" class="w-full bg-ashura-red py-3.5 rounded-xl font-black text-sm text-white shadow-lg">ثبت نذر معنوی</button>
+        <button onclick="processPayment()" class="w-full bg-ashura-red hover:bg-ashura-redhover py-3.5 rounded-xl font-black text-sm text-white shadow-lg transition-colors">ثبت نذر معنوی</button>
     </div>
 
     </div> <!-- End of content-layer -->
 
     <!-- اعلان حبابی (Toast) -->
-    <div id="toast-message" class="absolute bottom-4 left-4 right-4 bg-emerald-950 border border-emerald-500 text-emerald-200 rounded-xl p-3.5 shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
+    <div id="toast-message" class="absolute bottom-4 left-4 right-4 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/30 text-emerald-200 rounded-xl p-3.5 shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
         <i class="fa-solid fa-circle-check text-emerald-400"></i>
         <span id="toast-text" class="text-[11px] font-bold"></span>
     </div>
 
 </div>
 
+<!-- -->
 <script>
     // پایگاه داده مقتل روزانه برای روزهای اول تا سوم دهه اول عاشورا
     const storyDatabase = {
@@ -323,8 +325,22 @@
             badge: "روز اول محرم", 
             title: "بارگاه ملکوتی گنبد سیدالشهدا", 
             text: "نگاهی به گنبد طلا کوب و پرچم برافراشته حرم اباعبدالله الحسین (ع)؛ ملجأ عاشقان...", 
-            extended: "کربلا آغوش گشوده است تا خونین‌ترین حماسه عدل بشر را در آغوش کشد. روز اول کاروان اباعبدالله الحسین (ع) به این دشت نزدیک می‌شود؛ جایی که خاکش بوی ایثار و هوایش شمیم وفاداری دارد. این حرم به عنوان نماد ایستادگی عاشقان سیدالشهدا در کربلای معلی بر افراشته است.",
+            extended: "کربلا آغوش گشوده است تا خونین‌ترین حماسه عدل بشر را در آغوش کشد. روز اول کاروان اباعبدالله الحسین (ع) به این دشت نزدیک می‌شود؛ جایی که خاکش بوی ایثار و هوایش شمیم وفاداری دارد.",
             image: "New-Project-2024-06-29T115928.270 (1).webp" 
+        },
+        2: { 
+            badge: "روز دوم محرم", 
+            title: "بهشت بین‌الحرمین", 
+            text: "آستان قدس حسینی و عباسی؛ مسیری لبریز از عشق که دل‌ها را بین دو خورشید هدایت به پرواز درمی‌آورد...", 
+            extended: "در روز دوم محرم سال ۶۱ هجری قمری، کاروان امام حسین (ع) وارد دشت تفتیده کربلا شد. حضرت پس از نام بردن از این دشت فرمودند: «ههنا مناخ رکابنا و سفک دمائنا...» این مکان خوابگاه کاروان ما و محل ریخته شدن خون‌های ماست.",
+            image: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop" 
+        },
+        3: { 
+            badge: "روز سوم محرم", 
+            title: "ضریح شش‌گوشه حسینی", 
+            text: "مکانی مقدس که مزار امام غریب و دو فرزند فداکارش، علی‌اکبر و علی‌اصغر (ع) را در آغوش کشیده است...", 
+            extended: "روز سوم محرم منسوب به حضرت رقیه (س) است. ورود سپاه عمر بن سعد به کربلا برای محاصره کاروان امام در این روز آغاز گشت و دشت کربلا بوی غربت گرفت.",
+            image: "https://images.unsplash.com/photo-1590076212874-9f4e3df5300d?q=80&w=600&auto=format&fit=crop" 
         }
     };
 
@@ -340,11 +356,33 @@
         if (ext.classList.contains('max-h-0')) {
             ext.classList.replace('max-h-0', 'max-h-[300px]');
             ext.classList.replace('opacity-0', 'opacity-100');
-            btnText.innerText = 'بستن روایت';
+            btnText.innerText = 'بستن متن';
         } else {
             ext.classList.replace('max-h-[300px]', 'max-h-0');
             ext.classList.replace('opacity-100', 'opacity-0');
-            btnText.innerText = 'متن کامل روایت';
+            btnText.innerText = 'ادامه متن';
+        }
+    }
+
+    // تغییر روز مقتل به عقب و جلو
+    function changeDay(step) {
+        let newDay = currentDay + step;
+        if (newDay >= 1 && newDay <= 3) {
+            currentDay = newDay;
+            const data = storyDatabase[currentDay];
+            document.getElementById('story-title').innerText = data.title;
+            document.getElementById('story-text').innerText = data.text;
+            
+            // به‌روزرسانی اصولی تصویر بنر
+            const imgEl = document.getElementById('story-img');
+            imgEl.src = data.image;
+
+            // بستن خودکار باکس بازشونده در زمان تغییر روز
+            const ext = document.getElementById('narrative-extension');
+            const btnText = document.querySelector('#narrative-toggle-btn span');
+            ext.classList.replace('max-h-[300px]', 'max-h-0');
+            ext.classList.replace('opacity-100', 'opacity-0');
+            btnText.innerText = 'ادامه متن';
         }
     }
 
@@ -367,7 +405,7 @@
         switchView('main-hub-view'); 
     }
 
-    // باز کردن پیش‌فاکتور برای پلن‌های اشتراکی با مبالغ درخواستی جدید و مبالغ اصلاح‌شده شما
+    // باز کردن پیش‌فاکتور برای پلن‌های اشتراکی با مبالغ دقیق درخواستی شما
     function openInvoice(planId) {
         const t = document.getElementById('invoice-plan-title');
         const b = document.getElementById('invoice-base-price');
@@ -429,7 +467,7 @@
         }, 3000);
     }
 
-    // آپلود تصویر مردمی صباگرام
+    // آپلود تصویر مردمی
     function handleImageUpload(e) { 
         showToast('تصویر با موفقیت دریافت شد. پس از تایید مدیر پویش، منتشر می‌شود.'); 
     }
