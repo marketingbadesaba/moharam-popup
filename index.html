@@ -67,6 +67,26 @@
         
         /* اطمینان از قرارگیری محتوا بر روی لایه تذهیب پس‌زمینه */
         .content-layer { position: relative; z-index: 1; }
+
+        /* اسکرول افقی کارت‌های اشتراک */
+        .subscription-scroll {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 4px;
+        }
+        .subscription-scroll::-webkit-scrollbar { display: none; }
+        .subscription-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .subscription-card {
+            flex-shrink: 0;
+            /* نمایش ۲.۵ کارت در صفحه: عرض هر کارت = 100%/2.5 = 40% */
+            width: calc((100% - 16px) / 2.5);
+            scroll-snap-align: start;
+        }
     </style>
 
     <script>
@@ -94,7 +114,7 @@
         <!-- سکشن اول: مقتل روزانه (طراحی شیشه‌ای با غلظت بهینه شده برای وضوح بیشتر) -->
         <section class="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.1] rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg transition-all">
             
-            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل -->
+            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل - فول سایز به عرض باکس -->
             <div id="story-img-frame" class="w-full h-40 sm:h-44 rounded-xl bg-ashura-950 mb-3.5 border border-white/5 relative overflow-hidden transition-all duration-300">
                 <img id="story-img" src="New-Project-2024-06-29T115928.270 (1).webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -116,108 +136,112 @@
             </div>
         </section>
 
-        <!-- عنوان سکشن دوم: اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم -->
-        <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1 mb-1">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم</h4>
+        <!-- عنوان سکشن دوم: نزدیک به سکشن اشتراک -->
+        <div class="flex flex-col gap-2">
+            <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم</h4>
 
-        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی با غلظت بهینه شده) -->
-        <section class="bg-amber-500/[0.05] backdrop-blur-2xl border border-amber-500/20 rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_rgba(217,119,6,0.03)] relative transition-all">
+            <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی با غلظت بهینه شده) -->
+            <section class="bg-amber-500/[0.05] backdrop-blur-2xl border border-amber-500/20 rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_rgba(217,119,6,0.03)] relative transition-all">
 
-            <!-- گرید اشتراک‌های سه‌گانه نوستالژیک باب با تم کرم لوکس و مدرن -->
-            <div class="grid grid-cols-3 gap-1.5 xs:gap-2">
-                
-                <!-- کارت ۶ ماهه -->
-                <div onclick="openInvoice('6')" class="bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.02] transition-all">
-                    <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۱۵٪ تخفیف</span>
-                    <!-- لوگوی سنتی باب‌النعیم -->
-                    <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                        <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                        <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                            <span class="text-[10px] font-black text-emerald-400">باب</span>
+                <!-- اسکرول افقی کارت‌های اشتراک: ۲.۵ کارت در نمای اول -->
+                <div class="subscription-scroll">
+                    
+                    <!-- کارت ۶ ماهه -->
+                    <div onclick="openInvoice('6')" class="subscription-card bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.02] transition-all">
+                        <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۱۵٪ تخفیف</span>
+                        <!-- لوگوی سنتی باب‌النعیم -->
+                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
+                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
+                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
+                                <span class="text-[10px] font-black text-emerald-400">باب</span>
+                            </div>
+                        </div>
+                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک ۶ ماهه</h5>
+                        <div class="w-full border-t border-slate-200 pt-1.5">
+                            <span class="text-[8.5px] xs:text-[9.5px] text-slate-400 line-through block leading-none mb-0.5">۱۱۶,۰۰۰</span>
+                            <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۹۸,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
+                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                         </div>
                     </div>
-                    <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک ۶ ماهه</h5>
-                    <div class="w-full border-t border-slate-200 pt-1.5">
-                        <span class="text-[8.5px] xs:text-[9.5px] text-slate-400 line-through block leading-none mb-0.5">۱۱۶,۰۰۰</span>
-                        <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۹۸,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
-                    </div>
-                </div>
 
-                <!-- کارت ۱ ساله (محبوب‌ترین و پیشنهاد ویژه طلایی) -->
-                <div onclick="openInvoice('12')" class="bg-[#fffbeb] border-2 border-ashura-gold rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-md scale-[1.04] z-10 hover:scale-[1.07] transition-all">
-                    <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۳۵٪ تخفیف</span>
-                    <!-- لوگوی سنتی باب‌النعیم -->
-                    <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                        <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                        <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                            <span class="text-[10px] font-black text-emerald-400">باب</span>
+                    <!-- کارت ۱ ساله (محبوب‌ترین و پیشنهاد ویژه طلایی) -->
+                    <div onclick="openInvoice('12')" class="subscription-card bg-[#fffbeb] border-2 border-ashura-gold rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-md z-10 hover:scale-[1.02] transition-all">
+                        <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۳۵٪ تخفیف</span>
+                        <!-- لوگوی سنتی باب‌النعیم -->
+                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
+                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
+                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
+                                <span class="text-[10px] font-black text-emerald-400">باب</span>
+                            </div>
+                        </div>
+                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-amber-900 mb-1 leading-tight whitespace-nowrap">اشتراک ۱ ساله</h5>
+                        <div class="w-full border-t border-amber-200 pt-1.5">
+                            <span class="text-[8.5px] xs:text-[9.5px] text-amber-700/60 line-through block leading-none mb-0.5">۱۹۳,۰۰۰</span>
+                            <span class="text-[10.5px] xs:text-[12px] font-black text-amber-950 block mb-1.5 leading-none whitespace-nowrap">۱۲۵,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
+                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                         </div>
                     </div>
-                    <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-amber-900 mb-1 leading-tight whitespace-nowrap">اشتراک ۱ ساله</h5>
-                    <div class="w-full border-t border-amber-200 pt-1.5">
-                        <span class="text-[8.5px] xs:text-[9.5px] text-amber-700/60 line-through block leading-none mb-0.5">۱۹۳,۰۰۰</span>
-                        <span class="text-[10.5px] xs:text-[12px] font-black text-amber-950 block mb-1.5 leading-none whitespace-nowrap">۱۲۵,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
-                    </div>
-                </div>
 
-                <!-- کارت دائمی (بدون تخفیف و با قیمت اصلی ۸۸۰ هزار تومان) -->
-                <div onclick="openInvoice('life')" class="bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.02] transition-all">
-                    <!-- نگهداشت فضاساز نامرئی جهت حفظ تراز افقی کارت ها در غیاب بج تخفیف -->
-                    <div class="h-[14px] xs:h-[15px] mb-1.5"></div>
-                    <!-- لوگوی سنتی باب‌النعیم -->
-                    <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                        <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                        <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                            <span class="text-[10px] font-black text-emerald-400">باب</span>
+                    <!-- کارت دائمی (بدون تخفیف و با قیمت اصلی ۸۸۰ هزار تومان) -->
+                    <div onclick="openInvoice('life')" class="subscription-card bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.02] transition-all">
+                        <!-- نگهداشت فضاساز نامرئی جهت حفظ تراز افقی کارت ها در غیاب بج تخفیف -->
+                        <div class="h-[14px] xs:h-[15px] mb-1.5"></div>
+                        <!-- لوگوی سنتی باب‌النعیم -->
+                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
+                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
+                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
+                                <span class="text-[10px] font-black text-emerald-400">باب</span>
+                            </div>
+                        </div>
+                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک دائمی</h5>
+                        <div class="w-full border-t border-slate-200 pt-1.5">
+                            <!-- فضاساز نامرئی برای جایگزینی قیمت خط خورده و حفظ یکدستی با کارتهای بغلی -->
+                            <span class="text-[8.5px] xs:text-[9.5px] opacity-0 block leading-none mb-0.5 select-none">۰۰۰,۰۰۰</span>
+                            <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۸۸۰,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
+                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                         </div>
                     </div>
-                    <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک دائمی</h5>
-                    <div class="w-full border-t border-slate-200 pt-1.5">
-                        <!-- فضاساز نامرئی برای جایگزینی قیمت خط خورده و حفظ یکدستی با کارتهای بغلی -->
-                        <span class="text-[8.5px] xs:text-[9.5px] opacity-0 block leading-none mb-0.5 select-none">۰۰۰,۰۰۰</span>
-                        <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۸۸۰,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- عنوان سکشن سوم: نزدیک به سکشن نذورات -->
+        <div class="flex flex-col gap-2">
+            <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1">نذورات و خیریه</h4>
+
+            <!-- سکشن سوم: بخش نذورات به صورت دو کارت تمام‌عرض کاملاً متمایز و شیشه‌ای خیره‌کننده -->
+            <section class="flex flex-col gap-3.5">
+                <!-- کارت اول: نذر بهار معرفت (شیشه زمردی فیروزه‌ای ملایم و متمایز) -->
+                <div onclick="showCharityView('bahar')" class="bg-emerald-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-emerald-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(16,185,129,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
+                    
+                    <!-- لوگوی پویش بهار معرفت (بزرگ‌تر، مینی‌مال و بدون کادر) -->
+                    <div class="w-12 h-12 rounded-xl overflow-hidden bg-emerald-950/40 flex-shrink-0 flex items-center justify-center">
+                        <img src="logo_bahar.png" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1">
+                    </div>
+
+                    <div class="flex-grow">
+                        <!-- فونت نذرها مینی‌مال، لوکس و کاملاً خوانا -->
+                        <h4 class="text-[12px] font-black text-emerald-300/90 mb-0.5">نذر بهار معرفت</h4>
+                        <p class="text-[10.5px] text-slate-300 leading-normal">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
                     </div>
                 </div>
 
-            </div>
-        </section>
+                <!-- کارت دوم: اطعام گلستان علی (شیشه سرخ گرم ملایم و متمایز) -->
+                <div onclick="showCharityView('golestan')" class="bg-red-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-red-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(239,68,68,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
+                    
+                    <!-- لوگوی پویش اطعام گلستان علی (بزرگ‌تر، مینی‌مال و بدون کادر) -->
+                    <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/40 flex-shrink-0 flex items-center justify-center">
+                        <img src="logo_golestan.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1">
+                    </div>
 
-        <!-- عنوان سکشن سوم: نذورات و خیریه -->
-        <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1 mb-1">نذورات و خیریه</h4>
-
-        <!-- سکشن سوم: بخش نذورات به صورت دو کارت تمام‌عرض کاملاً متمایز و شیشه‌ای خیره‌کننده -->
-        <section class="flex flex-col gap-3.5">
-            <!-- کارت اول: نذر بهار معرفت (شیشه زمردی فیروزه‌ای ملایم و متمایز) -->
-            <div onclick="showCharityView('bahar')" class="bg-emerald-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-emerald-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(16,185,129,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                
-                <!-- لوگوی پویش بهار معرفت (بزرگ‌تر، مینی‌مال و بدون کادر) -->
-                <div class="w-12 h-12 rounded-xl overflow-hidden bg-emerald-950/40 flex-shrink-0 flex items-center justify-center">
-                    <img src="logo_bahar.png" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1">
+                    <div class="flex-grow">
+                        <h4 class="text-[12px] font-black text-red-300/90 mb-0.5">اطعام گلستان علی</h4>
+                        <p class="text-[10.5px] text-slate-300 leading-normal">توزیع غذای گرم در تاسوعا و عاشورا</p>
+                    </div>
                 </div>
-
-                <div class="flex-grow">
-                    <!-- فونت نذرها مینی‌مال، لوکس و کاملاً خوانا -->
-                    <h4 class="text-[12px] font-black text-emerald-300/90 mb-0.5">نذر بهار معرفت</h4>
-                    <p class="text-[10.5px] text-slate-300 leading-normal">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
-                </div>
-            </div>
-
-            <!-- کارت دوم: اطعام گلستان علی (شیشه سرخ گرم ملایم و متمایز) -->
-            <div onclick="showCharityView('golestan')" class="bg-red-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-red-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(239,68,68,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                
-                <!-- لوگوی پویش اطعام گلستان علی (بزرگ‌تر، مینی‌مال و بدون کادر) -->
-                <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/40 flex-shrink-0 flex items-center justify-center">
-                    <img src="logo_golestan.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1">
-                </div>
-
-                <div class="flex-grow">
-                    <h4 class="text-[12px] font-black text-red-300/90 mb-0.5">اطعام گلستان علی</h4>
-                    <p class="text-[10.5px] text-slate-300 leading-normal">توزیع غذای گرم در تاسوعا و عاشورا</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- بخش عکس‌های مردمی (طراحی شیشه‌ای مینیمال) -->
         <section class="bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-2xl p-3.5 sm:p-4 shadow-lg mb-4">
