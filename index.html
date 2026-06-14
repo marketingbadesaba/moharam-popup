@@ -112,14 +112,15 @@
     <div id="main-hub-view" class="flex flex-col gap-5 sm:gap-6 transition-view">
 
         <!-- سکشن اول: مقتل روزانه (طراحی شیشه‌ای با غلظت بهینه شده برای وضوح بیشتر) -->
-        <section class="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.1] rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg transition-all">
+        <section class="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.1] rounded-2xl overflow-hidden shadow-lg transition-all">
             
-            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل - فول سایز به عرض باکس -->
-            <div id="story-img-frame" class="w-full h-40 sm:h-44 rounded-xl bg-ashura-950 mb-3.5 border border-white/5 relative overflow-hidden transition-all duration-300">
-                <img id="story-img" src="New-Project-2024-06-29T115928.270 (1).webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
+            <!-- تصویر باشکوه بین‌الحرمین - فول سایز چسبیده به بالا، راست و چپ باکس -->
+            <div id="story-img-frame" class="w-full h-40 sm:h-44 bg-ashura-950 relative overflow-hidden transition-all duration-300">
+                <img id="story-img" src="5.webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             </div>
 
+            <div class="p-3.5 sm:p-4">
             <h3 id="story-title" class="text-[13.5px] font-black text-white mb-1.5 flex items-center">بارگاه ملکوتی گنبد سیدالشهدا</h3>
             <!-- زیرتیتر روایت -->
             <p id="story-text" class="text-[11.5px] text-slate-300 leading-relaxed mb-2.5">نگاهی به گنبد طلا کوب و پرچم برافراشته حرم اباعبدالله الحسین (ع)؛ ملجأ عاشقان...</p>
@@ -133,6 +134,7 @@
             
             <div class="flex justify-between items-center pt-2.5 border-t border-white/5">
                 <button onclick="toggleNarrative()" id="narrative-toggle-btn" class="text-[10.5px] font-bold text-ashura-goldlight flex items-center gap-1 hover:text-ashura-gold transition-colors"><i class="fa-solid fa-book-open"></i><span>ادامه متن</span></button>
+            </div>
             </div>
         </section>
 
@@ -217,7 +219,7 @@
                     
                     <!-- لوگوی پویش بهار معرفت (بزرگ‌تر، مینی‌مال و بدون کادر) -->
                     <div class="w-12 h-12 rounded-xl overflow-hidden bg-emerald-950/40 flex-shrink-0 flex items-center justify-center">
-                        <img src="logo_bahar.png" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1">
+                        <img src="3.png" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1">
                     </div>
 
                     <div class="flex-grow">
@@ -232,7 +234,7 @@
                     
                     <!-- لوگوی پویش اطعام گلستان علی (بزرگ‌تر، مینی‌مال و بدون کادر) -->
                     <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/40 flex-shrink-0 flex items-center justify-center">
-                        <img src="logo_golestan.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1">
+                        <img src="4.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1">
                     </div>
 
                     <div class="flex-grow">
