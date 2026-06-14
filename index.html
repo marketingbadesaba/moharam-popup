@@ -42,24 +42,24 @@
     <style>
         body {
             font-family: 'Vazirmatn', 'sans-serif';
-            background-color: #0d0e10;
+            background-color: #f4f3ef;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(185, 28, 28, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 85% 85%, rgba(13, 92, 84, 0.04) 0%, transparent 50%);
+                radial-gradient(circle at 10% 10%, rgba(185, 28, 28, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(13, 92, 84, 0.03) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
-        /* پترن تذهیب باکیفیت و برجسته اسلیمی روی بدنه خاکستری سربی */
+        /* روشن‌تر کردن پس‌زمینه اسلیمی برای دیده شدن بهتر باکس‌های شیشه‌ای روی آن */
         .islamic-pattern-bg {
             position: relative;
-            background-color: #0c0d0f;
+            background-color: #2b2e31;
         }
         
         .islamic-pattern-bg::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='0.7' stroke-opacity='0.05'%3E%3Cpath d='M40 0 L45 35 L80 40 L45 45 L40 80 L35 45 L0 40 L35 35 Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3Cpath d='M0 0 L80 80 M80 0 L0 80'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='0.7' stroke-opacity='0.08'%3E%3Cpath d='M40 0 L45 35 L80 40 L45 45 L40 80 L35 45 L0 40 L35 35 Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3Cpath d='M0 0 L80 80 M80 0 L0 80'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: repeat;
             pointer-events: none;
             z-index: 0;
@@ -86,52 +86,49 @@
 </head>
 <body class="text-gray-100 min-h-screen py-4 px-2 sm:px-4 flex justify-center items-start">
 
+<!-- STREAMING_CHUNK: Rendering primary immersive mobile container -->
 <!-- بدنه اصلی هاب تعاملی -->
-<div id="app-viewport" class="w-full max-w-md islamic-pattern-bg border border-white/5 rounded-[32px] p-3.5 sm:p-4 shadow-2xl flex flex-col gap-5 overflow-hidden relative min-h-[660px]">
+<div id="app-viewport" class="w-full max-w-md islamic-pattern-bg border border-white/5 rounded-[32px] p-3.5 sm:p-4 shadow-2xl flex flex-col gap-6 overflow-hidden relative min-h-[660px]">
     
     <!-- لایه محتوا جهت اولویت قرارگیری بر روی پترن پس‌زمینه -->
-    <div class="content-layer flex flex-col gap-5">
+    <div class="content-layer flex flex-col gap-6">
     
     <!-- نمای اصلی هاب -->
-    <div id="main-hub-view" class="flex flex-col gap-5 transition-view">
+    <div id="main-hub-view" class="flex flex-col gap-6 transition-view">
 
-        <!-- -->
-        <!-- سکشن اول: مقتل روزانه (طراحی شیشه‌ای لوکس و سرد متمایز) -->
-        <section class="relative bg-slate-900/40 backdrop-blur-md border border-slate-700/30 rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg">
+        <!-- سکشن اول: مقتل روزانه (طراحی شیشه‌ای با غلظت بهینه شده برای وضوح بیشتر روی بک‌گراند جدید) -->
+        <section class="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.1] rounded-2xl p-3.5 sm:p-4 overflow-hidden shadow-lg transition-all">
             
-            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل بدون هیچ حاشیه شلوغ -->
+            <!-- تصویر باشکوه بین‌الحرمین در بالاترین قسمت مقتل -->
             <div id="story-img-frame" class="w-full h-40 sm:h-44 rounded-xl bg-ashura-950 mb-3.5 border border-white/5 relative overflow-hidden transition-all duration-300">
-                <img id="story-img" src="5.webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
+                <img id="story-img" src="New-Project-2024-06-29T115928.270 (1).webp" alt="بارگاه ملکوتی امام حسین" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop';">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             </div>
 
-            <h3 id="story-title" class="text-[13.5px] font-black text-white mb-1.5 flex items-center gap-1.5">بارگاه ملکوتی گنبد سیدالشهدا</h3>
+            <h3 id="story-title" class="text-[13.5px] font-black text-white mb-1.5 flex items-center">بارگاه ملکوتی گنبد سیدالشهدا</h3>
             <!-- زیرتیتر روایت -->
             <p id="story-text" class="text-[11.5px] text-slate-300 leading-relaxed mb-2.5">نگاهی به گنبد طلا کوب و پرچم برافراشته حرم اباعبدالله الحسین (ع)؛ ملجأ عاشقان...</p>
 
-            <!-- محتوای اکستند شونده مقتل (بدون پلیر صوتی) -->
+            <!-- محتوای اکستند شونده مقتل -->
             <div id="narrative-extension" class="max-h-0 overflow-hidden transition-all duration-500 opacity-0 border-t border-white/5">
                 <div class="py-2.5 text-slate-300 text-[11px] leading-relaxed" id="narrative-extended-text">
                     کربلا آغوش گشوده است تا خونین‌ترین حماسه عدل بشر را در آغوش کشد. روز اول کاروان اباعبدالله الحسین (ع) به این دشت نزدیک می‌شود؛ جایی که خاکش بوی ایثار و هوایش شمیم وفاداری دارد.
                 </div>
             </div>
             
-            <div class="flex items-center pt-2.5 border-t border-white/5">
+            <div class="flex justify-between items-center pt-2.5 border-t border-white/5">
                 <button onclick="toggleNarrative()" id="narrative-toggle-btn" class="text-[10.5px] font-bold text-ashura-goldlight flex items-center gap-1 hover:text-ashura-gold transition-colors"><i class="fa-solid fa-book-open"></i><span>ادامه متن</span></button>
             </div>
         </section>
 
-        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی گرم و مجزا بدون نشان شلوغ ویژه محرم) -->
-        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی گرم و کاملاً تفکیک‌شده بدون نشان شلوغ محرم) -->
-        <section class="bg-amber-950/25 backdrop-blur-md border border-amber-500/20 rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_0_rgba(217,119,6,0.03)] relative">
-            <div class="flex justify-between items-center gap-2 mb-4">
-                <!-- عنوان بخش هم وزن و باابهت همانند بنر مقتل بالا -->
-                <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-amber-100 flex items-center gap-1.5 min-w-0">
-                    <span class="truncate">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم</span>
-                </h4>
-            </div>
+        <!-- STREAMING_CHUNK: Formatting section titles as sleek white text blocks -->
+        <!-- عنوان سکشن دوم: اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم -->
+        <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1 mb-2.5">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم</h4>
 
-            <!-- گرید اشتراک‌های سه‌گانه نوستالژیک باب با تم کرم لوکس بر مبنای تصاویر ارسالی -->
+        <!-- سکشن دوم: بخش خرید اشتراک (شیشه‌ای طلایی با غلظت بهینه شده) -->
+        <section class="bg-amber-500/[0.05] backdrop-blur-2xl border border-amber-500/20 rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_rgba(217,119,6,0.03)] relative transition-all">
+
+            <!-- گرید اشتراک‌های سه‌گانه نوستالژیک باب با تم کرم لوکس و مدرن -->
             <div class="grid grid-cols-3 gap-1.5 xs:gap-2">
                 
                 <!-- کارت ۶ ماهه -->
@@ -148,10 +145,11 @@
                     <div class="w-full border-t border-slate-200 pt-1.5">
                         <span class="text-[8.5px] xs:text-[9.5px] text-slate-400 line-through block leading-none mb-0.5">۱۱۶,۰۰۰</span>
                         <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none">۹۸,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black block leading-none">خرید و فعال‌سازی</span>
+                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                     </div>
                 </div>
 
+                <!-- STREAMING_CHUNK: Building the highly popular 1 Year Subscription Card -->
                 <!-- کارت ۱ ساله (محبوب‌ترین و پیشنهاد ویژه طلایی) -->
                 <div onclick="openInvoice('12')" class="bg-[#fffbeb] border-2 border-ashura-gold rounded-xl p-1.5 xs:p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-md scale-[1.04] z-10 hover:scale-[1.07] transition-all">
                     <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5">۳۵٪ تخفیف</span>
@@ -166,7 +164,7 @@
                     <div class="w-full border-t border-amber-200 pt-1.5">
                         <span class="text-[8.5px] xs:text-[9.5px] text-amber-700/60 line-through block leading-none mb-0.5">۱۹۳,۰۰۰</span>
                         <span class="text-[10.5px] xs:text-[12px] font-black text-amber-950 block mb-1.5 leading-none">۱۲۵,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black block leading-none">خرید و فعال‌سازی</span>
+                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                     </div>
                 </div>
 
@@ -186,49 +184,52 @@
                         <!-- فضاساز نامرئی برای جایگزینی قیمت خط خورده و حفظ یکدستی با کارتهای بغلی -->
                         <span class="text-[8.5px] xs:text-[9.5px] opacity-0 block leading-none mb-0.5 select-none">۰۰۰,۰۰۰</span>
                         <span class="text-[10.5px] xs:text-[12px] font-black text-slate-900 block mb-1.5 leading-none">۸۸۰,۰۰۰ <span class="text-[7.5px] xs:text-[8px] font-normal">تومان</span></span>
-                        <span class="w-full py-1.5 rounded bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black block leading-none">خرید و فعال‌سازی</span>
+                        <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید و فعال‌سازی</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- -->
-        <!-- بخش نذورات به صورت دو کارت شیشه‌ای روشن، تمام‌عرض و بسیار متمایز از هم (سکشن سوم) -->
+        <!-- STREAMING_CHUNK: Designing thin border full-width glass charity campaign cards -->
+        <!-- عنوان سکشن سوم: نذورات و خیریه -->
+        <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1 mb-2.5">نذورات و خیریه</h4>
+
+        <!-- سکشن سوم: بخش نذورات به صورت دو کارت تمام‌عرض کاملاً متمایز و شیشه‌ای خیره‌کننده -->
         <section class="flex flex-col gap-3.5">
-            <!-- کارت اول: نذر بهار معرفت (تم سبز فیروزه‌ای شیشه‌ای متمایز و مینی‌مال) -->
-            <div onclick="showCharityView('bahar')" class="bg-teal-950/25 backdrop-blur-md border border-white/5 hover:border-teal-400/40 rounded-2xl p-3 cursor-pointer shadow-[0_4px_20px_0_rgba(20,184,166,0.03)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                <div class="absolute top-0 inset-x-0 h-[2px] bg-teal-500/20"></div>
+            <!-- کارت اول: نذر بهار معرفت (شیشه زمردی فیروزه‌ای ملایم و متمایز) -->
+            <div onclick="showCharityView('bahar')" class="bg-emerald-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-emerald-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(16,185,129,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
                 
-                <!-- لوگوی پویش بهار معرفت -->
-                <div class="w-12 h-12 rounded-xl overflow-hidden bg-teal-950/40 flex-shrink-0 flex items-center justify-center">
-                    <img src="3.jpg" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1.5">
+                <!-- لوگوی پویش بهار معرفت (بزرگ‌تر، مینی‌مال و بدون کادر) -->
+                <div class="w-12 h-12 rounded-xl overflow-hidden bg-emerald-950/40 flex-shrink-0 flex items-center justify-center">
+                    <img src="logo_bahar.png" alt="لوگو بهار معرفت" onerror="this.onerror=null; this.src='https://placehold.co/100/0d5c54/ffffff?text=قرآن';" class="w-full h-full object-contain p-1">
                 </div>
 
                 <div class="flex-grow">
-                    <h4 class="text-[12px] font-black text-teal-300 mb-0.5">نذر بهار معرفت</h4>
-                    <p class="text-[10.5px] text-slate-300 leading-normal">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
+                    <!-- فونت نذرها مینی‌مال، لوکس و کاملاً خوانا -->
+                    <h4 class="text-[12px] font-black text-emerald-300/90 mb-0.5">نذر بهار معرفت</h4>
+                    <p class="text-[10.5px] text-slate-300">نذر ۴۰۰۰ اشتراک قرآن و مفاتیح صوتی</p>
                 </div>
             </div>
 
-            <!-- کارت دوم: اطعام گلستان علی (تم سرخ گرم شیشه‌ای متمایز و مینی‌مال) -->
-            <div onclick="showCharityView('golestan')" class="bg-red-950/25 backdrop-blur-md border border-white/5 hover:border-red-400/40 rounded-2xl p-3 cursor-pointer shadow-[0_4px_20px_0_rgba(185,28,28,0.03)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
-                <div class="absolute top-0 inset-x-0 h-[2px] bg-red-500/20"></div>
+            <!-- کارت دوم: اطعام گلستان علی (شیشه سرخ گرم ملایم و متمایز) -->
+            <div onclick="showCharityView('golestan')" class="bg-red-500/[0.04] backdrop-blur-xl border border-white/5 hover:border-red-500/30 rounded-2xl p-3.5 cursor-pointer shadow-[0_4px_24px_rgba(239,68,68,0.02)] hover:scale-[1.01] transition-all duration-300 flex items-center gap-3.5 min-h-[75px] text-right relative overflow-hidden">
                 
-                <!-- لوگوی پویش اطعام گلستان علی -->
+                <!-- لوگوی پویش اطعام گلستان علی (بزرگ‌تر، مینی‌مال و بدون کادر) -->
                 <div class="w-12 h-12 rounded-xl overflow-hidden bg-red-950/40 flex-shrink-0 flex items-center justify-center">
-                    <img src="4.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1.5">
+                    <img src="logo_golestan.png" alt="لوگو گلستان علی" onerror="this.onerror=null; this.src='https://placehold.co/100/991b1b/ffffff?text=اطعام';" class="w-full h-full object-contain p-1">
                 </div>
 
                 <div class="flex-grow">
-                    <h4 class="text-[12px] font-black text-red-300 mb-0.5">اطعام گلستان علی</h4>
-                    <p class="text-[10.5px] text-slate-300 leading-normal">توزیع غذای گرم در تاسوعا و عاشورا</p>
+                    <h4 class="text-[12px] font-black text-red-300/90 mb-0.5">اطعام گلستان علی</h4>
+                    <p class="text-[10.5px] text-slate-300">توزیع غذای گرم در تاسوعا و عاشورا</p>
                 </div>
             </div>
         </section>
 
-        <!-- بخش عکس‌های مردمی (طراحی شیشه‌ای هماهنگ) -->
-        <section class="bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-2xl p-3.5 sm:p-4 shadow-lg">
+        <!-- STREAMING_CHUNK: Integrating user generated photo gallery block -->
+        <!-- بخش عکس‌های مردمی (طراحی شیشه‌ای مینیمال) -->
+        <section class="bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-2xl p-3.5 sm:p-4 shadow-lg">
             <div class="flex justify-between items-center mb-3">
                 <span class="text-[11px] font-black text-slate-400">عکس‌های مردمی «برای حسین جانم...»</span>
             </div>
@@ -247,6 +248,7 @@
         </section>
     </div>
 
+    <!-- STREAMING_CHUNK: Constructing sub-views for SPA payment flow and custom charity details -->
     <!-- نمای پیش‌فاکتور تعاملی (SPA) -->
     <div id="pre-invoice-view" class="hidden flex-col gap-5 transition-view opacity-0">
         <header class="flex items-center gap-3 pb-3 border-b border-white/5">
@@ -315,7 +317,7 @@
 
 </div>
 
-<!-- -->
+<!-- STREAMING_CHUNK: Initializing interactive functions and routing handlers -->
 <script>
     // پایگاه داده مقتل روزانه برای روزهای اول تا سوم دهه اول عاشورا
     const storyDatabase = {
@@ -403,7 +405,7 @@
         switchView('main-hub-view'); 
     }
 
-    // باز کردن پیش‌فاکتور برای پلن‌های اشتراکی با مبالغ دقیق درخواستی شما
+    // باز کردن پیش‌فاکتور برای پلن‌های اشتراکی با مبالغ درخواستی جدید و مبالغ اصلاح‌شده شما
     function openInvoice(planId) {
         const t = document.getElementById('invoice-plan-title');
         const b = document.getElementById('invoice-base-price');
@@ -465,7 +467,7 @@
         }, 3000);
     }
 
-    // آپلود تصویر مردمی
+    // آپلود تصویر مردمی صباگرام
     function handleImageUpload(e) { 
         showToast('تصویر با موفقیت دریافت شد. پس از تایید مدیر پویش، منتشر می‌شود.'); 
     }
@@ -473,3 +475,7 @@
 
 </body>
 </html>
+```eof
+
+<!-- STREAMING_CHUNK: Duplicating identical glassmorphic codebase to muharram_hub.html helper file... -->
+muharram_hub.html
