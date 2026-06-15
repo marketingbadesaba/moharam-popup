@@ -152,7 +152,27 @@
     
     <!-- نمای اصلی هاب -->
     <div id="main-hub-view" class="flex flex-col gap-5 sm:gap-6 transition-view">
-
+<!-- بنر معرفی و تسلیت بالای صفحه (قرارگیری بلافاصله بعد از تصویر هدر اصلی) -->
+<div class="px-4 pt-4 pb-2 w-full max-w-md mx-auto">
+    <div class="relative overflow-hidden bg-[#18191b] border-r-[3.5px] border-[#AE3135] border-y border-l border-white/[0.04] rounded-2xl p-3.5 text-right shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+        
+        <!-- افکت نوری بسیار ملایم قرمز در پس‌زمینه سمت راست کارت -->
+        <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#AE3135]/15 to-transparent pointer-events-none"></div>
+        
+        <!-- محتوای اصلی متن با تایپوگرافی خوانا و تراز شده -->
+        <div class="relative z-10 flex items-start gap-2.5">
+            <!-- آیکون تزیینی کوچک متناسب با فضای معنوی -->
+            <div class="flex-shrink-0 text-[#AE3135] text-[14px] mt-0.5 select-none">
+                ✦
+            </div>
+            
+            <p class="text-[11px] sm:text-[11.5px] font-medium text-slate-300 leading-[1.8] text-justify">
+                <span class="text-[#AE3135] font-black">ضمن تسلیت ایام سوگواری سیدالشهدا(ع)،</span> 
+                برای بهره‌مندی معنوی بیشتر از فضیلت این شب‌ها، اشتراک مفاتیح صوتی باب‌النعیم با شرایط ویژه محرم در دسترس شماست.
+            </p>
+        </div>
+    </div>
+</div>
         <!-- -->
         <!-- عنوان سکشن دوم: ویژه محرم -->
         <div class="flex flex-col gap-2">
