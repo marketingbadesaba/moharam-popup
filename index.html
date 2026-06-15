@@ -158,62 +158,45 @@
         <div class="flex flex-col gap-2">
             <h4 class="text-[12.5px] xs:text-[13.5px] font-black text-slate-200 pr-1">اشتراک‌های تخفیفی مفاتیح صوتی باب‌النعیم ویژه محرم</h4>
 
-            <!-- سکشن دوم: بخش خرید اشتراک با نمای ۲.۵ کارته جهت نمایش بزرگتر و جذاب‌تر -->
-            <section class="glass-card rounded-2xl p-3.5 sm:p-4 shadow-lg relative transition-all">
-                <div class="subscription-scroll">
-                    
-                    <!-- کارت ۶ ماهه (عرض حدود ۴۰ درصد جهت نمایش دو کارت کامل و کارت سوم نصفه) -->
-                    <div onclick="openInvoice('6')" class="subscription-card bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.01] transition-all">
-                        <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۱۵٪ تخفیف</span>
-                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                                <span class="text-[10px] font-black text-emerald-400">باب</span>
-                            </div>
-                        </div>
-                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک ۶ ماهه</h5>
-                        <div class="w-full border-t border-slate-200 pt-1.5">
-                            <span class="text-[8px] xs:text-[9px] text-slate-400 line-through block leading-none mb-0.5">۱۱۶,۰۰۰</span>
-                            <span class="text-[10px] xs:text-[11.5px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۹۸,۰۰۰ <span class="text-[7px] xs:text-[7.5px] font-normal">تومان</span></span>
-                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید</span>
-                        </div>
-                    </div>
+            <!-- سکشن دوم: کارت‌های اشتراک -->
+            <section class="relative flex items-stretch gap-2 pt-5">
 
-                    <!-- کارت ۱ ساله (محبوب‌ترین گزینه ویژه) -->
-                    <div onclick="openInvoice('12')" class="subscription-card bg-[#fffbeb] border-2 border-ashura-gold rounded-xl p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-md z-10 hover:scale-[1.01] transition-all">
-                        <span class="bg-ashura-red text-white text-[8px] xs:text-[8.5px] font-black px-1.5 py-0.5 rounded-full mb-1.5 whitespace-nowrap">۳۵٪ تخفیف</span>
-                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                                <span class="text-[10px] font-black text-emerald-400">باب</span>
-                            </div>
-                        </div>
-                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-amber-900 mb-1 leading-tight whitespace-nowrap">اشتراک ۱ ساله</h5>
-                        <div class="w-full border-t border-amber-200 pt-1.5">
-                            <span class="text-[8px] xs:text-[9px] text-amber-700/60 line-through block leading-none mb-0.5">۱۹۳,۰۰۰</span>
-                            <span class="text-[10px] xs:text-[11.5px] font-black text-amber-950 block mb-1.5 leading-none whitespace-nowrap">۱۲۵,۰۰۰ <span class="text-[7px] xs:text-[7.5px] font-normal">تومان</span></span>
-                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید</span>
-                        </div>
+                <!-- کارت دائمی - چپ -->
+                <div onclick="openInvoice('life')" class="flex-1 bg-[#18191b] border border-white/[0.07] rounded-2xl pt-3 pb-3 px-2 flex flex-col items-center text-center cursor-pointer relative hover:border-white/15 transition-all">
+                    <div class="absolute -top-3.5 right-1/2 translate-x-1/2 bg-[#23262a] border border-white/10 text-slate-400 text-[8px] font-black px-2 py-[3px] rounded-full whitespace-nowrap">به‌صرفه‌ترین</div>
+                    <h5 class="text-[11.5px] font-black text-slate-200 mb-3">دائمی</h5>
+                    <div class="flex-1 flex flex-col items-center justify-center mb-3">
+                        <span class="text-[8.5px] text-slate-500 block mb-0.5">هزارتومان</span>
+                        <span class="text-[30px] font-black text-white leading-none">۸۸۰</span>
                     </div>
-
-                    <!-- کارت دائمی بدون تخفیف صوتی -->
-                    <div onclick="openInvoice('life')" class="subscription-card bg-[#faf6ec] border border-[#ebdcb9] rounded-xl p-2 flex flex-col justify-between items-center text-center cursor-pointer relative shadow-sm hover:scale-[1.01] transition-all">
-                        <div class="h-[14px] xs:h-[15px] mb-1.5"></div>
-                        <div class="w-10 h-10 xs:w-11 xs:h-11 rounded-lg overflow-hidden bg-black mb-1.5 relative shadow-inner shrink-0">
-                            <img src="2.png" alt="باب" onerror="handleLogoError(this)" class="w-full h-full object-contain p-0.5">
-                            <div class="logo-fallback hidden absolute inset-0 flex items-center justify-center bg-black">
-                                <span class="text-[10px] font-black text-emerald-400">باب</span>
-                            </div>
-                        </div>
-                        <h5 class="text-[9.5px] xs:text-[10.5px] font-black text-slate-800 mb-1 leading-tight whitespace-nowrap">اشتراک دائمی</h5>
-                        <div class="w-full border-t border-slate-200 pt-1.5">
-                            <span class="text-[8px] xs:text-[9px] opacity-0 block leading-none mb-0.5 select-none">۰۰۰,۰۰۰</span>
-                            <span class="text-[10px] xs:text-[11.5px] font-black text-slate-900 block mb-1.5 leading-none whitespace-nowrap">۸۸۰,۰۰۰ <span class="text-[7px] xs:text-[7.5px] font-normal">تومان</span></span>
-                            <span class="w-full py-1.5 rounded bg-ashura-red hover:bg-ashura-redhover text-white text-[8px] xs:text-[8.5px] font-black block leading-none transition-colors">خرید</span>
-                        </div>
-                    </div>
-
+                    <button class="w-full py-[9px] rounded-xl bg-white/[0.06] hover:bg-white/10 border border-white/10 text-slate-200 text-[9.5px] font-black transition-all">انتخاب</button>
                 </div>
+
+                <!-- کارت یکساله - وسط، برجسته با بوردر طلایی -->
+                <div onclick="openInvoice('12')" class="flex-[1.1] bg-[#18191b] border-2 border-ashura-gold rounded-2xl pt-3 pb-3 px-2 flex flex-col items-center text-center cursor-pointer relative shadow-[0_0_20px_rgba(217,119,6,0.25)] hover:shadow-[0_0_30px_rgba(217,119,6,0.4)] transition-all">
+                    <!-- تگ پیشنهاد ویژه روی بوردر طلایی -->
+                    <div class="absolute -top-3.5 right-1/2 translate-x-1/2 bg-ashura-gold text-black text-[8px] font-black px-2.5 py-[3px] rounded-full whitespace-nowrap shadow-sm">پیشنهاد ویژه</div>
+                    <h5 class="text-[12px] font-black text-ashura-goldlight mb-3">یک ساله</h5>
+                    <div class="flex-1 flex flex-col items-center justify-center mb-1">
+                        <span class="text-[8.5px] text-slate-500 line-through block leading-none mb-1">۱۹۳ هزارتومان</span>
+                        <span class="text-[8.5px] text-slate-400 block mb-0.5">هزارتومان</span>
+                        <span class="text-[33px] font-black text-white leading-none">۱۲۵</span>
+                    </div>
+                    <button class="w-full py-[10px] rounded-xl bg-ashura-gold hover:bg-ashura-goldlight text-black text-[10px] font-black mt-2 transition-all">خرید اشتراک</button>
+                </div>
+
+                <!-- کارت ۶ ماهه - راست -->
+                <div onclick="openInvoice('6')" class="flex-1 bg-[#18191b] border border-white/[0.07] rounded-2xl pt-3 pb-3 px-2 flex flex-col items-center text-center cursor-pointer relative hover:border-white/15 transition-all">
+                    <div class="h-[14px]"></div>
+                    <h5 class="text-[11.5px] font-black text-slate-200 mb-3">۶ ماهه</h5>
+                    <div class="flex-1 flex flex-col items-center justify-center mb-3">
+                        <span class="text-[8.5px] text-slate-500 line-through block leading-none mb-1">۱۱۶ هزار</span>
+                        <span class="text-[8.5px] text-slate-500 block mb-0.5">هزارتومان</span>
+                        <span class="text-[30px] font-black text-white leading-none">۹۸</span>
+                    </div>
+                    <button class="w-full py-[9px] rounded-xl bg-white/[0.06] hover:bg-white/10 border border-white/10 text-slate-200 text-[9.5px] font-black transition-all">انتخاب</button>
+                </div>
+
             </section>
         </div>
 
